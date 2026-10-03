@@ -67,11 +67,11 @@ function App() {
     setTimeout(() => setStampAnimation(true), 100);
   }, [filteredProjects, params]);
 
-  // Auto-run on param/filter change (debounced)
-  useEffect(() => {
-    const timer = setTimeout(runOptimization, 300);
-    return () => clearTimeout(timer);
-  }, [runOptimization]);
+  // Auto-run on param/filter change (debounced) - DISABLED: only run on button click
+  // useEffect(() => {
+  //   const timer = setTimeout(runOptimization, 300);
+  //   return () => clearTimeout(timer);
+  // }, [runOptimization]);
 
   // Get concentration data for heatmap
   const concentrationData = useMemo(() => {
